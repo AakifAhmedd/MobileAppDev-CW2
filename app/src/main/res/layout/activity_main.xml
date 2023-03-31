@@ -6,13 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_add_meals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Meals to DB"
+            android:layout_marginTop="16dp"
+            />
+
+        <Button
+            android:id="@+id/btn_search_by_ingredient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search for Meals By Ingredient"
+            android:layout_marginTop="16dp"
+            />
+
+        <Button
+            android:id="@+id/btn_search_meals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search for Meals"
+            android:layout_marginTop="16dp"
+            />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
