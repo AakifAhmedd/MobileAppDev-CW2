@@ -22,7 +22,7 @@
             android:id="@+id/button2"
             android:layout_width="236dp"
             android:layout_height="72dp"
-            android:background="@drawable/button_outline"
+            android:background="@drawable/button_secondary"
             android:text="@string/by_ingredient_string"
             android:textAllCaps="false"
             android:textColor="?attr/colorPrimary"
@@ -32,7 +32,7 @@
             android:id="@+id/button"
             android:layout_width="236dp"
             android:layout_height="55dp"
-            android:background="@drawable/button"
+            android:background="@drawable/button_primary"
             android:text="@string/search_for_meals_string"
             android:textAllCaps="false"
             tools:ignore="MissingConstraints" />
