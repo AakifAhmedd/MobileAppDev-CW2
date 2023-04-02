@@ -2,10 +2,9 @@
 <resources>
 	<!-- main_screen strings -->
 
-	<string name="app_name">Page 1</string>
+	<string name="app_name">FlavorFinder</string>
 	<string name="ek_img_content">ExportKit Image</string>
 	<string name="search_for_meals_string">Search for Meals</string>
 	<string name="by_ingredient_string">Search for Meals \n By Ingredient</string>
 	<string name="add_meals_string">Add Meals</string>
-	<string name="flavor_finder_string">FlavorFinder</string>
 </resources>
