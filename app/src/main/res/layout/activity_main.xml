@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:background="@drawable/button_tertiary"
-            android:drawableEnd="@drawable/add"
+            android:drawableEnd="@drawable/icons8_add_24___"
             android:text="@string/add_meals_string"
             android:textAllCaps="false"
             android:textColor="?attr/colorPrimary" />
