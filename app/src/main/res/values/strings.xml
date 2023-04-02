@@ -1,4 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MobileAppCW2</string>
-    <string name="button1">Meal</string>
+	<!-- main_screen strings -->
+
+	<string name="app_name">Page 1</string>
+	<string name="ek_img_content">ExportKit Image</string>
+	<string name="search_for_meals_string">Search for Meals</string>
+	<string name="by_ingredient_string">By Ingredient</string>
+	<string name="search_for_meals_ek1_string">Search for Meals</string>
+	<string name="add_meals_string">Add Meals</string>
+	<string name="flavorfinder_string">FlavorFinder</string>
 </resources>
