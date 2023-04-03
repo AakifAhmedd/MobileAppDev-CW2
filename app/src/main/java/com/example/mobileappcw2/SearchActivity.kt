@@ -1,9 +1,9 @@
 package com.example.mobileappcw2
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
@@ -40,6 +40,7 @@ class SearchActivity : AppCompatActivity() {
 
         })
     }
+
     private fun filterList(query: String?) {
 
         if (query != null) {
@@ -57,14 +58,13 @@ class SearchActivity : AppCompatActivity() {
             }
         }
     }
+
+
+
     private fun addDataToList() {
-        mList.add(LanguageData("Java", R.drawable.icons8_add_18___))
-        mList.add(LanguageData("Kotlin", R.drawable.icons8_add_18___))
-        mList.add(LanguageData("C++", R.drawable.icons8_add_18___))
-        mList.add(LanguageData("Python", R.drawable.icons8_add_18___))
-        mList.add(LanguageData("HTML", R.drawable.icons8_add_18___))
-        mList.add(LanguageData("Swift", R.drawable.icons8_add_18___))
-        mList.add(LanguageData("C#", R.drawable.icons8_add_18___))
-        mList.add(LanguageData("JavaScript", R.drawable.icons8_add_18___))
+        mList.add(LanguageData("Spicy Arrabiata Penne", R.drawable.penne_pic))
+        mList.add(LanguageData("Brown Stew Chicken", R.drawable.penne_pic))
+        mList.add(LanguageData("Chicken and Mushroom Hotpot", R.drawable.penne_pic))
+        mList.add(LanguageData("Banana Boat", R.drawable.penne_pic))
     }
 }

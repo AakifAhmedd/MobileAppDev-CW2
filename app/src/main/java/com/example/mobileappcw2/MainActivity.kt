@@ -11,12 +11,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Get a reference to the button
-        val button = findViewById<Button>(R.id.button)
+        val searchMealButton = findViewById<Button>(R.id.search_meals_button)
+        val searchIngredientButton = findViewById<Button>(R.id.search_ingredient_button)
+        val addMeal = findViewById<Button>(R.id.add_meal_button)
 
         // Set an OnClickListener to the button
-        button.setOnClickListener {
+        searchMealButton.setOnClickListener {
             // Create an intent to start the SearchActivity
             val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+        }
+
+        searchIngredientButton.setOnClickListener{
+            val intent = Intent (this, SearchActivity::class.java)
+            startActivity(intent)
+        }
+
+        addMeal.setOnClickListener{
+            val intent = Intent (this, SearchActivity::class.java)
             startActivity(intent)
         }
     }

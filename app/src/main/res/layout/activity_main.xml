@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline3">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/search_meals_button"
             android:layout_width="236dp"
             android:layout_height="55dp"
             android:background="@drawable/button_primary"
@@ -35,7 +35,7 @@
             android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/search_ingredient_button"
             android:layout_width="236dp"
             android:layout_height="72dp"
             android:layout_margin="20dp"
@@ -46,7 +46,7 @@
 
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/add_meal_button"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:background="@drawable/button_tertiary"

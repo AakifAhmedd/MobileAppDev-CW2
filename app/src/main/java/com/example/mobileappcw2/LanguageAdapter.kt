@@ -13,6 +13,17 @@ class LanguageAdapter(var mList: List<LanguageData>) :
     inner class LanguageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val suggestionsImage : ImageView = itemView.findViewById(R.id.suggestionsTv)
         val titleTv : TextView = itemView.findViewById(R.id.titleTv)
+        val heartIcon : ImageView = itemView.findViewById(R.id.heart)
+
+        init {
+            heartIcon.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    mList[position].toggleLike()
+                    notifyItemChanged(position)
+                }
+            }
+        }
     }
 
     fun setFilteredList(mList: List<LanguageData>){
@@ -20,14 +31,26 @@ class LanguageAdapter(var mList: List<LanguageData>) :
         notifyDataSetChanged()
     }
 
+    var onHeartIconClickListener: ((language: LanguageData) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LanguageViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item , parent , false)
         return LanguageViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: LanguageViewHolder, position: Int) {
-        holder.suggestionsImage.setImageResource(mList[position].logo)
+        holder.suggestionsImage.setImageResource(mList[position].picture)
         holder.titleTv.text = mList[position].title
+        holder.heartIcon.setImageResource(
+            if (mList[position].isLiked) R.drawable.heart_filled else R.drawable.heart_outline
+        )
+        holder.heartIcon.setOnClickListener {
+            mList[position].isLiked = !mList[position].isLiked
+            holder.heartIcon.setImageResource(
+                if (mList[position].isLiked) R.drawable.heart_filled else R.drawable.heart_outline
+            )
+            onHeartIconClickListener?.invoke(mList[position])
+        }
     }
 
     override fun getItemCount(): Int {
