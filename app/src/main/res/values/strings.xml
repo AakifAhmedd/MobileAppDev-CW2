@@ -7,4 +7,5 @@
 	<string name="search_for_meals_string">Search for Meals</string>
 	<string name="by_ingredient_string">Search for Meals \n By Ingredient</string>
 	<string name="add_meals_string">Add Meals</string>
+    <string name="suggestions">Suggestions</string>
 </resources>
