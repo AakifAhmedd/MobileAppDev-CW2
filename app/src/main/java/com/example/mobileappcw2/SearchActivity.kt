@@ -2,10 +2,11 @@ package com.example.mobileappcw2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import java.util.ArrayList
+import java.util.*
 
 class SearchActivity : AppCompatActivity() {
 
@@ -38,5 +39,32 @@ class SearchActivity : AppCompatActivity() {
             }
 
         })
+    }
+    private fun filterList(query: String?) {
+
+        if (query != null) {
+            val filteredList = ArrayList<LanguageData>()
+            for (i in mList) {
+                if (i.title.lowercase(Locale.ROOT).contains(query)) {
+                    filteredList.add(i)
+                }
+            }
+
+            if (filteredList.isEmpty()) {
+                Toast.makeText(this, "No Data found", Toast.LENGTH_SHORT).show()
+            } else {
+                adapter.setFilteredList(filteredList)
+            }
+        }
+    }
+    private fun addDataToList() {
+        mList.add(LanguageData("Java", R.drawable.icons8_add_18___))
+        mList.add(LanguageData("Kotlin", R.drawable.icons8_add_18___))
+        mList.add(LanguageData("C++", R.drawable.icons8_add_18___))
+        mList.add(LanguageData("Python", R.drawable.icons8_add_18___))
+        mList.add(LanguageData("HTML", R.drawable.icons8_add_18___))
+        mList.add(LanguageData("Swift", R.drawable.icons8_add_18___))
+        mList.add(LanguageData("C#", R.drawable.icons8_add_18___))
+        mList.add(LanguageData("JavaScript", R.drawable.icons8_add_18___))
     }
 }

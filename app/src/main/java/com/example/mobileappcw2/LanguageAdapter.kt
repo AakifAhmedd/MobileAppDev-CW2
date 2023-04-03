@@ -11,7 +11,7 @@ class LanguageAdapter(var mList: List<LanguageData>) :
     RecyclerView.Adapter<LanguageAdapter.LanguageViewHolder>() {
 
     inner class LanguageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val logo : ImageView = itemView.findViewById(R.id.logoIv)
+        val suggestionsImage : ImageView = itemView.findViewById(R.id.suggestionsTv)
         val titleTv : TextView = itemView.findViewById(R.id.titleTv)
     }
 
@@ -26,7 +26,7 @@ class LanguageAdapter(var mList: List<LanguageData>) :
     }
 
     override fun onBindViewHolder(holder: LanguageViewHolder, position: Int) {
-        holder.logo.setImageResource(mList[position].logo)
+        holder.suggestionsImage.setImageResource(mList[position].logo)
         holder.titleTv.text = mList[position].title
     }
 
