@@ -1,6 +1,8 @@
 package com.example.mobileappcw2
 
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -10,23 +12,31 @@ import java.util.*
 
 class SearchActivity : AppCompatActivity() {
 
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerViewSuggestions: RecyclerView
+    private lateinit var recyclerViewSearch: RecyclerView
     private lateinit var searchView: SearchView
     private var mList = ArrayList<LanguageData>()
-    private lateinit var adapter: LanguageAdapter
+    private lateinit var searchAdapter: LanguageAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
 
-        recyclerView = findViewById(R.id.recyclerViewSuggestions)
+        val suggestionsText = findViewById<TextView>(R.id.suggestions)
+        val searchText = findViewById<TextView>(R.id.search)
+
+        recyclerViewSuggestions = findViewById(R.id.recyclerViewSuggestions)
+        recyclerViewSearch = findViewById(R.id.recyclerViewSearch)
         searchView = findViewById(R.id.searchView)
 
-        recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recyclerViewSuggestions.setHasFixedSize(true)
+        recyclerViewSearch.setHasFixedSize(true)
+
+        recyclerViewSuggestions.layoutManager = LinearLayoutManager(this)
+        recyclerViewSearch.layoutManager = LinearLayoutManager(this)
         addDataToList()
-        adapter = LanguageAdapter(mList)
-        recyclerView.adapter = adapter
+        searchAdapter = LanguageAdapter(mList)
+        recyclerViewSearch.adapter = searchAdapter
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -34,11 +44,20 @@ class SearchActivity : AppCompatActivity() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText.isNullOrEmpty()) {
+                    recyclerViewSuggestions.visibility = View.VISIBLE
+                    suggestionsText.visibility = View.VISIBLE
+                    suggestionsText.visibility = View.VISIBLE
+                } else {
+                    recyclerViewSuggestions.visibility = View.GONE
+                    suggestionsText.visibility = View.GONE
+                }
                 filterList(newText)
                 return true
             }
 
         })
+
     }
 
     private fun filterList(query: String?) {
@@ -48,13 +67,16 @@ class SearchActivity : AppCompatActivity() {
             for (i in mList) {
                 if (i.title.lowercase(Locale.ROOT).contains(query)) {
                     filteredList.add(i)
+                    recyclerViewSearch.visibility = View.VISIBLE
                 }
             }
 
             if (filteredList.isEmpty()) {
                 Toast.makeText(this, "No Data found", Toast.LENGTH_SHORT).show()
+                recyclerViewSearch.visibility = View.GONE
+
             } else {
-                adapter.setFilteredList(filteredList)
+                searchAdapter.setFilteredList(filteredList)
             }
         }
     }

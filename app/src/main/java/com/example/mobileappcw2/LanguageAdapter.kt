@@ -34,7 +34,7 @@ class LanguageAdapter(var mList: List<LanguageData>) :
     var onHeartIconClickListener: ((language: LanguageData) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LanguageViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item , parent , false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_vertical , parent , false)
         return LanguageViewHolder(view)
     }
 
