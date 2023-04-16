@@ -10,40 +10,76 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/eczarm"
         android:gravity="center"
         android:text="@string/app_name"
         android:textColor="@color/white"
-        android:fontFamily="@font/eczarm"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"/>
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3">
 
         <Button
-            android:id="@+id/search_meals_button"
+            android:id="@+id/changing_button"
             android:layout_width="236dp"
             android:layout_height="55dp"
             android:background="@drawable/button_primary"
             android:text="@string/search_for_meals_string"
             android:textAllCaps="false" />
 
-        <Button
-            android:id="@+id/search_ingredient_button"
-            android:layout_width="236dp"
-            android:layout_height="72dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/button_secondary"
-            android:text="@string/by_ingredient_string"
-            android:textAllCaps="false"
-            android:textColor="?attr/colorSecondary" />
+        <TextView
+            android:id="@+id/search_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="@string/search"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/search_meals_button"
+                android:layout_width="115dp"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal=""
+                android:background="@drawable/button_secondary"
+                android:text="@string/for_meals"
+                android:textAllCaps="false"
+                android:textColor="?attr/colorSecondary" />
+
+            <Button
+                android:id="@+id/search_ingredient_button"
+                android:layout_width="115dp"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_secondary"
+                android:text="@string/by_ingredient_string"
+                android:textAllCaps="false"
+                android:textColor="?attr/colorSecondary" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/add_meal_button"
