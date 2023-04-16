@@ -5,7 +5,7 @@
 	<string name="app_name">FlavorFinder</string>
 	<string name="ek_img_content">ExportKit Image</string>
 	<string name="search_for_meals_string">Search for Meals</string>
-	<string name="by_ingredient_string">Search for Meals \n By Ingredient</string>
+	<string name="by_ingredient_string">By Ingredient</string>
 	<string name="add_meals_string">Add Meals</string>
 	<string name="suggestions">Suggestions</string>
 	<string name="search_results">Search Results</string>
@@ -19,4 +19,6 @@
 	<string name="food_name">Food Name</string>
 	<string name="cuisine">Cuisine</string>
 	<string name="serving_info">serving_info</string>
+	<string name="search">Search</string>
+	<string name="for_meals">For Meals</string>
 </resources>

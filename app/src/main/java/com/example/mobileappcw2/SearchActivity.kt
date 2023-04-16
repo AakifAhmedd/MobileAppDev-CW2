@@ -55,9 +55,7 @@ class SearchActivity : AppCompatActivity() {
                 filterList(newText)
                 return true
             }
-
         })
-
     }
 
     private fun filterList(query: String?) {
